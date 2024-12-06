@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      p {
+        font-size: 30px;
+        font-style: bold;
+      }
+      img {
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-white">
+      <nav class="bg-white text-white flex align-center justify-around">
+        <div class="nav-left">
+          <img
+            src="/1c54f7b06d7723c21afc5035bf88a5ef.png"
+            class="w-[100px] h-[50px] object-cover mt-[20px]"
+          />
+        </div>
+        <div
+          class="flex align-center justify-center gap-[20px] text-black mt-[20px]"
+        >
+          <a class="mt-[10px]">Нүүр</a>
+          <a class="mt-[10px]" href="index.html">Бүтээгдэхүүн Нэмэх</a>
+          <a class="mt-[10px]" href="product.html">Сагс</a>
+        </div>
+      </nav>
+      <div class="overflow-hidden bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div
+            class="mx-auto grid max-w-2xl lg:grid-cols-2 border-black border-2 p-[20px]"
+          >
+            <div class="lg:pr-8 lg:pt-4">
+              <div class="lg:max-w-lg">
+                <div>
+                  Name:
+                  <div id="textname" class="text-[30px]"></div>
+                </div>
+                <div>
+                  Description:
+                  <div id="desc"></div>
+                </div>
+                <div>
+                  Price:
+                  <div id="price"></div>
+                </div>
+              </div>
+            </div>
+            <div id="imageContainer" class="w-[300px] h-[225px]"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative isolate px-6 pt-14 lg:px-8">
+        <div
+          class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          aria-hidden="true"
+        >
+          <div
+            class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            style="
+              clip-path: polygon(
+                74.1% 44.1%,
+                100% 61.6%,
+                97.5% 26.9%,
+                85.5% 0.1%,
+                80.7% 2%,
+                72.5% 32.5%,
+                60.2% 62.4%,
+                52.4% 68.1%,
+                47.5% 58.3%,
+                45.2% 34.5%,
+                27.5% 76.7%,
+                0.1% 64.9%,
+                17.9% 100%,
+                27.6% 76.8%,
+                76.1% 97.7%,
+                74.1% 44.1%
+              );
+            "
+          ></div>
+        </div>
+        <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+          <div class="hidden sm:mb-8 sm:flex sm:justify-center"></div>
+        </div>
+        <div
+          class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+          aria-hidden="true"
+        >
+          <div
+            class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+            style="
+              clip-path: polygon(
+                74.1% 44.1%,
+                100% 61.6%,
+                97.5% 26.9%,
+                85.5% 0.1%,
+                80.7% 2%,
+                72.5% 32.5%,
+                60.2% 62.4%,
+                52.4% 68.1%,
+                47.5% 58.3%,
+                45.2% 34.5%,
+                27.5% 76.7%,
+                0.1% 64.9%,
+                17.9% 100%,
+                27.6% 76.8%,
+                76.1% 97.7%,
+                74.1% 44.1%
+              );
+            "
+          ></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const imageUrl = localStorage.getItem("image");
+      const imgElement = document.createElement("img");
+      imgElement.src = imageUrl;
+      imgElement.alt = "Image from URL";
+      imgElement.width = 300;
+
+      document.getElementById("imageContainer").appendChild(imgElement);
+
+      const b = localStorage.getItem("name");
+      const text_element = document.createElement("p");
+      text_element.textContent = b;
+      document.getElementById("textname").appendChild(text_element);
+
+      const d = localStorage.getItem("about");
+      const text_element2 = document.createElement("p");
+      text_element2.textContent = d;
+      document.getElementById("desc").appendChild(text_element2);
+
+      const c = localStorage.getItem("price");
+      const text_element1 = document.createElement("p");
+      text_element1.textContent = c;
+      document.getElementById("price").appendChild(text_element1);
+    </script>
+  </body>
+</html>
